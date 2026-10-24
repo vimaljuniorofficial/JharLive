@@ -1,4 +1,6 @@
 [build]
+  # Overrides Netlify UI's 'npm run build' so it never fails even if package.json is missing
+  command = "echo 'JharLive static site ready for deployment'"
   publish = "."
 
 [[redirects]]
