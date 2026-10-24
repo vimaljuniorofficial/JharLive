@@ -1,25 +1,11 @@
-# Netlify Configuration File
-# Documentation: https://docs.netlify.com/configure-builds/file-based-configuration/
-
 [build]
-  # Build command using Vite
-  command = "npm run build"
-  # Directory containing the deployable HTML and static assets after build
-  publish = "dist"
+  publish = "."
 
-[build.environment]
-  # Recommended Node version for Vite 8 and modern tooling
-  NODE_VERSION = "20"
-
-# SPA Single Page Application Routing Rule
-# Redirects all incoming URLs to /index.html with status 200 so pushState router handles paths:
-# e.g., /admin, /about/, /terms/, /privacy/, and dynamic post slugs (/:slug/)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Recommended Security and Caching Headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -27,8 +13,3 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
