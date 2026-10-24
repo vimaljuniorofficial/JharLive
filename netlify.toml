@@ -1,7 +1,6 @@
 [build]
-  # Overrides Netlify UI's 'npm run build' so it never fails even if package.json is missing
-  command = "echo 'JharLive static site ready for deployment'"
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
@@ -15,3 +14,8 @@
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
