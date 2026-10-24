@@ -1,0 +1,6 @@
+{
+  "name": "झार लाइव — Education Updates Portal",
+  "description": "Comprehensive Jharkhand education and government recruitment portal with real-time Firebase sync, admin CMS, job notifications, JAC board results, and syllabus updates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
